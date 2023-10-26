@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/NpowerJDA/Npower_Coursera/DBC6.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="200"/><column_width id="3" width="1306"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainBookStore"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="BookStore" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="300"/><column index="2" value="102"/><column index="3" value="149"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Student" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="155"/><column index="2" value="156"/><column index="3" value="151"/><column index="4" value="82"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">CREATE table BookStore (
+BookISBN char,
+Status varchar(255),
+Category varchar(255),
+PurchaseCost float
+);
+</sql><sql name="SQL 2">INSERT into BookStore (BookISBN, Status, Category, PurchaseCost) 
+VALUES (&quot;978-0-331-95055-01-4&quot;,&quot;Out&quot;, &quot;Crime&quot;, 25.99)
+,(&quot;978-1-40020-96298-02-1&quot;,&quot;Out&quot;, &quot;Medical&quot;, 12.99)
+,(&quot;978-0-553-81762-01-5&quot;,&quot;In&quot;, &quot;Travel&quot;, 14.00)
+,(&quot;978-0-662-95055-01-2&quot;,&quot;Out&quot;, &quot;Cookery&quot;, 18.99)
+,(&quot;978-1-128-95055-01-3&quot;,&quot;Out&quot;, &quot;Crime&quot;, 11.99)
+,(&quot;978-0-419-96298-02-3&quot;,&quot;Out&quot;, &quot;Architecture&quot;, 35.00)
+,(&quot;978-1-40020-81762-01-6&quot;,&quot;In&quot;, &quot;Travel&quot;, 17.00)
+,(&quot;978-0-518-96298-01-2&quot;,&quot;Out&quot;, &quot;Travel&quot;, 9.99)
+,(&quot;978-0-447-96298-02-6&quot;,&quot;Out&quot;, &quot;Gardening&quot;, 12.50)
+,(&quot;978-0-394-81762-02-1&quot;,&quot;In&quot;, &quot;Cookery&quot;, 17.50)
+,(&quot;978-1-119-95055-02-4&quot;,&quot;In&quot;, &quot;Gardening&quot;, 13.50)
+,(&quot;978-0-261-81762-01-2&quot;,&quot;Out&quot;, &quot;Astronomy&quot;, 24.50)
+</sql><sql name="Q1">SELECT * FROM BookStore where PurchaseCost &gt;12;</sql><sql name="Q2">Select DISTINCT Category from BookStore;
+
+</sql><sql name="Q3">
+--Write a SQL query to retrieve all the data from Book where Status equals “out&quot;
+
+SELECT * FROM BookStore
+WHERE Status = &quot;Out&quot;
+
+</sql><sql name="Q4">
+SELECT * FROM BookStore
+LIMIT 3</sql><sql name="Q5">SELECT count(*) FROM BookStore
+WHERE Category = &quot;Travel&quot;</sql><sql name="Q6">DELETE FROM BookStore
+WHERE BookISBN in (&quot;978-1-119-95055-02-4&quot;, &quot;978-0-261-81762-01-2&quot;);</sql><sql name="SQL 10">SELECT DISTINCT COUNT(BookISBN) 
+FROM BookStore 
+WHERE Category=&quot;Travel&quot;;</sql><current_tab id="3"/></tab_sql></sqlb_project>
